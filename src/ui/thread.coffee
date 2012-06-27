@@ -48,11 +48,13 @@ do ($ = jQuery) ->
               .replace(/<(?!(?:\/?b|\/?font(?: color=[#a-zA-Z0-9]+)?)>)/g, "&lt;")
               .replace(/<\/b>(.*?)<b>/g, """<span class="ob">$1</span>""")
           )
-          item_html += """<span class="name">#{tmp}</span>"""
 
           #.mail
-          tmp = res.mail.replace(/<.*?(?:>|$)/g, "")
-          item_html += """<span class="mail">#{tmp}</span>"""
+          tmpMail = res.mail.replace(/<.*?(?:>|$)/g, "")
+          if tmpMail is ""
+          	  item_html += """<span class="name">#{tmp}</span>"""
+          else
+          	  item_html += """<span class="mailname name">#{tmp}</span><span class="mail">#{tmpMail}</span>"""
 
           #.other
           tmp = (

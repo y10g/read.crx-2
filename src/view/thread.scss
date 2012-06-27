@@ -11,10 +11,6 @@
   text-align: center;
 }
 
-html {
-  font-size: 15px;
-}
-
 .content {
   padding-bottom: 50px;
   &[data-res_search_hit_count="0"]:after {
@@ -421,3 +417,56 @@ header {
     $thread_res_info_color: silver
   );
 }
+
+.view.theme_2ch {
+  @include view_thread_theme (
+    $background_color: #efefef,
+    $color: #000,
+    $res_header_color: #000,
+    $res_name_color: green,
+    $res_name_ob_color: inherit,
+    $link_color: #00a,
+    $freq_color: #a00,
+    $anchor_color: #00e,
+    $anchor_visited_color: #551A8B,
+    $anchor_disabled_color: #666,
+    $one_color: #a40000,
+    $no_hit_message_color: #444,
+    $jump_panel_background_color: rgba(#000, 0.8),
+    $jump_panel_color: #fff,
+    $thread_footer_button_background_color: #eee,
+    $thread_footer_button_color: #222,
+    $thread_res_info_color: #666
+  );
+ .name {
+  font-weight: bold
+ }
+ .mailname {
+  color: blue
+ }
+ .ob {
+  font-weight: normal
+ }
+ .mail {
+  font-size: small;
+  color:#5500FF
+ }
+ .num:after {
+  content:" ： "
+ }
+ .other:before {
+  content:"："
+ }
+ .popup {
+  .message {
+   margin: 5px
+  }
+  > article {
+   zoom: 85%
+  }
+ }
+ .message {
+  margin: 0 0 0 40px
+ }
+}
+

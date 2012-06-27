@@ -75,6 +75,21 @@
   }
 }
 
+.view.theme_2ch .tab_tabbar > li {
+  color: #000;
+  & {
+    background-color: #ccc;
+    border-color: #aaa;
+  }
+  &.tab_selected {
+    background-color: #fff;
+    border-color: #fff;
+  }
+  > img {
+    background-color: #a55;
+  }
+}
+
 .tab_container {
   -webkit-box-flex: 1;
   overflow: hidden;

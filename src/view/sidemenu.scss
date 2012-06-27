@@ -207,3 +207,28 @@ li:not(.bookmark) + li.bookmark:before {
     )
   );
 }
+.view.theme_2ch {
+  @include view_sidemenu_theme(
+    $background_color: #ddd,
+    $color: #000,
+    $header_hover_background_color: #bbb,
+    $header_active_background_color: #aaa,
+    $header_open_background_color: #666,
+    $header_open_color: #fff,
+    $ul_background_color: #fafafa,
+    $a_hover_background_color: #ddd,
+    $a_hover_shadow_color: #ddd,
+    $bookmark_separator_color: #072a8a,
+    $bookmark_separator_border_color: #072a8a,
+    $searchbox_background_color: #fff,
+    $searchbox_color: #111,
+    $searchbox_item_border_color: #999,
+    $searchbox_submit_background_color: hsl(0, 0%, 100%),
+    $searchbox_submit_background_image: (
+      -webkit-linear-gradient(hsla(0, 0%, 0%, 0.05), hsla(0, 0%, 0%, 0.1)),
+      url(/img/search2_19x19_777.png)
+    )
+  );
+}
+
+

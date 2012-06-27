@@ -13,7 +13,7 @@ $z-index_notification: 8;
     font-family: inherit;
   }
 
-  ::-webkit-scrollbar {
+/*  ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
     border: 1px solid #cccccc;
@@ -25,7 +25,7 @@ $z-index_notification: 8;
     &:hover {
       background-color: #888888;
     }
-  }
+  }*/
 
   @-webkit-keyframes fade_in {
     0% {
@@ -42,7 +42,7 @@ $z-index_notification: 8;
     size: 16px;
     family: "MS PGothic", "IPAMonaPGothic", "Konatu", "Monapo", "Textar";
   };
-  line-height: 18px;
+  line-height: 1;
 }
 
 @mixin drop_shadow {
@@ -282,6 +282,23 @@ $z-index_notification: 8;
     );
   }
 
+  .view.theme_2ch {
+    @include common_view_style_1_theme(
+      $nav_bar_background_color: #fff,
+      $nav_bar_color: #333,
+      $nav_bar_item_border_color: #ccc,
+      $message_bar_info_background_color: #eef,
+      $message_bar_info_border_color: #ccd,
+      $message_bar_error_background_color: #ecc,
+      $message_bar_error_border_color: #ebb,
+      $icon_color: "333",
+      $active_icon_color: "007fff",
+      $search_icon_color: "777",
+      $color: #111,
+      $tool_menu_hover_background: hsl(210, 50%, 95%)
+    );
+  }
+
   .view.theme_dark {
     @include common_view_style_1_theme(
       $nav_bar_background_color: #444,
@@ -442,6 +459,16 @@ $z-index_notification: 8;
       $cell_border_color: #666,
       $cell_hover_background_color: #222,
       $empty_message_color: #ddd
+    );
+  }
+
+  .view.theme_2ch {
+    @include content_table_theme(
+      $background_color: #fafafa,
+      $color: #000,
+      $cell_border_color: #ddd,
+      $cell_hover_background_color: #e8e8e8,
+      $empty_message_color: #444
     );
   }
 }
