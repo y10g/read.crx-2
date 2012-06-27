@@ -16,11 +16,12 @@ app.boot "/view/bookmark.html", ->
   app.view_module.sort_item_selector($view)
   app.view_module.tool_menu($view)
 
-  trUpdatedObserver = new WebKitMutationObserver (records) ->
-    for record in records
-      if record.target.webkitMatchesSelector("tr.updated")
-        record.target.parentNode.appendChild(record.target)
-    return
+#  trUpdatedObserver = new WebKitMutationObserver (records) ->
+#    for record in records
+#      if record.target.webkitMatchesSelector("tr.updated")
+#        record.target.parentNode.appendChild(record.target)
+#    return
+
 
   #リロード時処理
   $view.on "request_reload", ->
@@ -34,11 +35,11 @@ app.boot "/view/bookmark.html", ->
 
     $reload_button.addClass("disabled")
 
-    trUpdatedObserver.observe($view[0].querySelector("tbody"), {
-      subtree: true
-      attributes: true
-      attributeFilter: ["class"]
-    })
+#    trUpdatedObserver.observe($view[0].querySelector("tbody"), {
+#      subtree: true
+#      attributes: true
+#      attributeFilter: ["class"]
+#    })
 
     board_list = []
     for bookmark in app.bookmark.get_all() when bookmark.type is "thread"
@@ -70,7 +71,7 @@ app.boot "/view/bookmark.html", ->
               .removeClass("table_sort_desc table_sort_asc")
           for tr in $view[0].querySelectorAll("tr:not(.updated)")
             tr.parentNode.appendChild(tr)
-          trUpdatedObserver.disconnect()
+#          trUpdatedObserver.disconnect()
           $view.removeClass("loading")
           $view.find(".searchbox").prop("disabled", false)
           setTimeout(->
